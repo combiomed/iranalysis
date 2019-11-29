@@ -1,0 +1,30 @@
+---
+title: IR analysis report
+output:
+  html_document:
+  toc: true
+  highlight: zenburn
+---
+
+### Experiment Summary
+`r name_by`: `r nrow(experiment)` entries total. Analysis of `r contrast_by` `r contrast[[1]]` versus `r contrast_by` `r contrast[[2]]`.
+
+### Most significant Differential IR
+```{r results, echo=FALSE, eval=show_results}
+knitr::kable(results_table)
+```
+
+### Volcano Plot
+```{r volcano, echo=FALSE, eval=show_volcano}
+ir_volcano(glm_results, irmatrix, experiment, name_by, contrast_by, contrast, xlimit=2, ylimit=50, x_sig_limit=0.5, y_sig_limit=log10(20), x_label_limit=0.5, y_label_limit=20, use_delta_ir=TRUE)
+```
+
+### Principal Component Analysis
+```{r pca, echo=FALSE, eval=show_pca}
+ir_pca(irmatrix, experiment, contrast_by, label=FALSE)
+```
+
+### Full Experiment Definition
+```{r exp_table, echo=FALSE, eval=show_exp_table}
+knitr::kable(experiment)
+```

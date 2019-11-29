@@ -1,0 +1,10 @@
+Package: iranalysis
+Type: Package
+Title: Downstream statistical analysis of IR
+Version: 0.1.0
+Author: William Wang
+Maintainer: William Wang
+Description: Performs differential IR analysis and generates descriptive statistics and plots for IR data. William's MD project.
+License:
+Encoding: UTF-8
+LazyData: true
